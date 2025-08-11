@@ -19,3 +19,12 @@ before_build:
 
 build_script:
   - call ci\appveyor.bat
+
+# Add this artifacts section
+artifacts:
+  - path: 'build\*.tar.gz'
+    name: 'Plugin Tarball'
+  - path: 'build\*.xml'
+    name: 'Plugin Metadata'
+  - path: 'build\upload.bat'
+    name: 'Upload Script'
