@@ -18,23 +18,23 @@ msgstr ""
 "X-Crowdin-File-ID: 124\n"
 
 #: src/vdr_pi.cpp:125
-msgid "VDR Record"
+msgid "Record"
 msgstr ""
 
 #: src/vdr_pi.cpp:129
-msgid "VDR Play"
+msgid "Play"
 msgstr ""
 
 #: src/vdr_pi.cpp:204
-msgid "VDR"
+msgid "ITS Playback"
 msgstr ""
 
 #: src/vdr_pi.cpp:207
-msgid "Voyage Data Recorder plugin for OpenCPN"
+msgid "ITS Playback plugin for ITS"
 msgstr ""
 
 #: src/vdr_pi.cpp:212
-msgid "Voyage Data Recorder plugin for OpenCPN\n"
+msgid "ITS Playback plugin for ITS\n"
 "Provides NMEA stream save and replay."
 msgstr ""
 
@@ -43,11 +43,11 @@ msgid "Stop recording before starting playback."
 msgstr ""
 
 #: src/vdr_pi.cpp:774 src/vdr_pi.cpp:829
-msgid "VDR Plugin"
+msgid "ITS Playback Plugin"
 msgstr ""
 
 #: src/vdr_pi.cpp:809
-msgid "Voyage Data Recorder"
+msgid "ITS Playback plugin"
 msgstr ""
 
 #: src/vdr_pi.cpp:828
@@ -103,7 +103,7 @@ msgid "Data Port:"
 msgstr ""
 
 #: src/vdr_pi_prefs.cpp:62
-msgid "VDR Preferences"
+msgid "ITS Playback Preferences"
 msgstr ""
 
 #: src/vdr_pi_prefs.cpp:111
@@ -151,11 +151,11 @@ msgid "Browse..."
 msgstr ""
 
 #: src/vdr_pi_prefs.cpp:194
-msgid "VDR File Management"
+msgid "ITS Playback File Management"
 msgstr ""
 
 #: src/vdr_pi_prefs.cpp:198
-msgid "Create new VDR file every:"
+msgid "Create new ITS Playback file every:"
 msgstr ""
 
 #: src/vdr_pi_prefs.cpp:207
@@ -229,7 +229,7 @@ msgid "Settings"
 msgstr ""
 
 #: src/vdr_pi_control.cpp:129
-msgid "Load VDR File"
+msgid "Load ITS Playback File"
 msgstr ""
 
 #: src/vdr_pi_control.cpp:143

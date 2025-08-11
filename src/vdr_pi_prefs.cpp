@@ -59,7 +59,7 @@ VDRPrefsDialog::VDRPrefsDialog(wxWindow* parent, wxWindowID id,
                                bool useSpeedThreshold, double speedThreshold,
                                int stopDelay,
                                const VDRProtocolSettings& protocols)
-    : wxDialog(parent, id, _("VDR Preferences"), wxDefaultPosition,
+    : wxDialog(parent, id, _("ITS Playback Preferences"), wxDefaultPosition,
                wxDefaultSize, wxDEFAULT_DIALOG_STYLE | wxRESIZE_BORDER),
       m_format(format),
       m_recording_dir(recordingDir),
@@ -191,11 +191,11 @@ wxPanel* VDRPrefsDialog::CreateRecordingTab(wxWindow* parent) {
 
   // File management section.
   wxStaticBox* logBox =
-      new wxStaticBox(panel, wxID_ANY, _("VDR File Management"));
+      new wxStaticBox(panel, wxID_ANY, _("ITS Playback File Management"));
   wxStaticBoxSizer* logSizer = new wxStaticBoxSizer(logBox, wxVERTICAL);
 
   m_logRotateCheck = new wxCheckBox(panel, ID_VDR_LOG_ROTATE_CHECK,
-                                    _("Create new VDR file every:"));
+                                    _("Create new ITS Playback file every:"));
   m_logRotateCheck->SetValue(m_log_rotate);
 
   wxBoxSizer* intervalSizer = new wxBoxSizer(wxHORIZONTAL);

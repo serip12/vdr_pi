@@ -66,7 +66,7 @@ bool VDRNetworkServer::Start(bool useTCP, int port, wxString& error) {
   if (success) {
     m_running = true;
     error = wxEmptyString;
-    wxLogMessage("VDR Network Server started - %s on port %d",
+    wxLogMessage("ITS Playback Network Server started - %s on port %d",
                  m_useTCP ? "TCP" : "UDP", m_port);
   }
   return success;

@@ -1,50 +1,35 @@
-= VDR
+= ITS
 
-== Voyage Data Recorder
+== ITS Playback
 
-Use Voyage Data Recorder to record and play NMEA files.
-
-== Links
-
-* Maintenance Source: https://github.com/rgleason/vdr_pi  Current
-* Source: https://github.com/nohal/vdr_pi[Github Nohal Repository]
-* Old Source: https://github.com/SethDart/vdr_pi[Github Seth-dart Original Repository]
-* Download: https://opencpn.org/OpenCPN/plugins/vdr.html[Website Download]
-* Forum: http://www.cruisersforum.com/forums/f134/vdr-plugin-59808.html[VDR Plugin Thread]
+Use ITS Playback to record and play NMEA files.
 
 image::vdr-ais_simulation-2.png[]
 
-== 1. Download and Install
+== 1. Install
 
-VDR Voyage Data Recorder is available as a managed plugin. The OpenCPN Manual has general information in xref:opencpn-plugins:misc:plugin-install.adoc[Plugin Download, Install and Enable] 
-for installing this plugin. This is the preferred way.
+ITS Playback is available as a managed plugin. Contact the ITS team for the installation file.
 
-In OpenCPN, go to the _Options → Plugins_ and download, install and enable the Tactics plugin.
+In ITS, go to the _Options → Plugins_ and choose *Import plugin...*.
 
-. In OpenCPN  Click *Tools-Options-Plugins*
-. First "Update" the master plugins catalog.
-. Select the VDR entry and "Install" the plugin.
-. In the list of installed plugins "Enable" the Tactics plugin and "Apply".
+. In ITS  Click *Tools-Options-Plugins*
+. Choose *Import plugin...* and browse to the provided *.tar.gz to install plugin.
 . Use “*Preferences*” to set your preferences (should be self-explanatory). Then “*Apply*.
-. After successful installation, the plugin should be available in the plugins tab of your OpenCPN options dialog box.
-. Then close *Options* and the two Play and Record VDR Icons should appear in the Toolbar.
+. After successful installation, the plugin should be available in the plugins tab of your ITS options dialog box.
+. Then close *Options* and the two Play and Record Playback Icons should appear in the Toolbar.
 
 == 2. Purpose
 
-* Record and Play NMEA0183, NMEA2000, and SignalK data streams in OpenCPN. See xref:log_format.adoc[Log Format Specification] for details on the recording format.
+* Record and Play NMEA0183, NMEA2000, and SignalK data streams in ITS. See xref:log_format.adoc[Log Format Specification] for details on the recording format.
 
-* Use VDR for AIS Simulation - Run VDR to play AIS NMEA files. Or… use
-the VDR plugin to record your passages and replay them later! The VDR is
-also great for testing NMEA sentences, the Dashboard and new OpenCPN
-features. These are just a few examples, of how to use this versatile
-plugin.
-* When VDR is activated in ToolBar→Options→Plugins→VDR, two Buttons appear in the ToolBar.
+* Use ITS Playback for AIS Simulation - Run ITS Playback to play AIS NMEA files. Or… use
+the ITS Playback to record your passages and replay them later!
 
 image::vdr-icons.png[]
 
 == 3. Preferences
 
-The VDR (Voyage Data Recorder) plugin offers several configuration options to control recording behavior and data management.
+The ITS Playback plugin offers several configuration options to control recording behavior and data management.
 
 == Recording Protocols
 * NMEA 0183: Select to record NMEA 0183 data streams.
@@ -57,11 +42,11 @@ Choose between two output formats:
 * CSV with timestamps: Converts NMEA data to CSV format with added timestamp information.
 
 == Recording Directory
-Specify the location where VDR files will be stored. Default directory is `/Users/[username]/Documents/VDR`.
+Specify the location where log files will be stored. Default directory is `/Users/[username]/Documents/VDR`.
 Use the "Browse" button to select a different location.
 
-== VDR File Management
-* Enable automatic file rotation by checking "Create new VDR file every:".
+== Playback File Management
+* Enable automatic file rotation by checking "Create new playback file every:".
 * Set the rotation interval in hours.
 * This helps manage file sizes and organize recordings by time periods.
 
@@ -69,7 +54,7 @@ Use the "Browse" button to select a different location.
 The plugin provides smart recording features to optimize data collection:
 
 === Automatic Start
-Enable "Automatically start recording" to begin recording when OpenCPN starts.
+Enable "Automatically start recording" to begin recording when ITS starts.
 
 === Speed-Based Recording
 * Set a speed threshold (in knots) to automatically start recording.
@@ -86,23 +71,13 @@ Enable "Automatically start recording" to begin recording when OpenCPN starts.
 All changes in preferences take effect immediately after clicking "OK". The "Cancel" button discards any changes made to the preferences.
 ====
 
-.VDR Preferences Window
-image::VDR-Preferences.png[VDR Preferences,title="VDR Preferences Window"]
-
-Example log:
-```
-13:46:49.236 MESSAGE vdr_pi.cpp:304 VDR: Auto-starting recording - speed 10.00 exceeds threshold 0.50
-13:49:11.712 MESSAGE vdr_pi.cpp:319 VDR: Speed dropped below threshold, starting stop delay timer
-13:51:11.396 MESSAGE vdr_pi.cpp:326 VDR: Auto-stopping recording - speed 0.10 below threshold 0.50 for 2 minutes
-```
-
 == 4. Operation
 
 * To start recording data immediately, click the "Record" button in the toolbar.
 The data is recorded in files named vdr_YYYYMMDDTHHMMSSZ.txt or vdr_YYYYMMDDTHHMMSSZ.csv
 depending on the preferences.
 * Click the "Play" button in the toolbar to display a dialog which can be
-used to replay VDR data or customize the preferences.
+used to replay playback data or customize the preferences.
 
 image::vdr-control.png[]
 
@@ -112,18 +87,18 @@ forwarding. Please note that the setting under options/ships/calculate
 SOG will impact which SOG values are shown when playing fast forwarding.
  - 1x sentences/messages are replayed at exactly the same original clock, i.e. real time. 2x is twice as fast. 
  - 100x is 100 times faster than the recording rate.
- - As replay speed gets higher, OpenCPN may not be able to keep up consuming sentences, which depends on the computer CPU, memory, whether other programs are running, how CPN is configured, what charts are displayed, the zoom level, etc. The VDR plugin ensures that the queue does not grow indefinitely by maintaining a max queue size.
+ - As replay speed gets higher, ITS may not be able to keep up consuming sentences, which depends on the computer CPU, memory, whether other programs are running, how CPN is configured, what charts are displayed, the zoom level, etc. The ITS Playback plugin ensures that the queue does not grow indefinitely by maintaining a max queue size.
 This makes it possible to replay at high speed to get a quick overview.
 * The lower part of the dialog shows the progress.
-* When recording, the VDR plugin includes all NMEA data available on the
-internal bus in OpenCPN. Even data not recognized or used by OpenCPN
+* When recording, the ITS Playback plugin includes all NMEA data available on the
+internal bus in ITS. Even data not recognized or used by ITS
 will be recorded. Everything (almost) in the ToolBar→Connections→NMEA
 debug window will be included.
-* In other words. The VDR records everything from all ports and does not
+* In other words. The ITS Playback records everything from all ports and does not
 participate in the downstream multiplexer filter or priority scheme.
-That way, a VDR recording may be played back, experimenting with various
+That way, a ITS Playback recording may be played back, experimenting with various
 filters and priorities if desired.
-* If you are playing a file with the VDR at the same time, even that
+* If you are playing a file with the ITS Playback at the same time, even that
 data will be included. So it is possible to play and record at the same
 time!
 
@@ -137,7 +112,7 @@ the “Auto Follow”, or press F2. The view will now center on the action.
 
 image::nmea-debug-dsc.png[]
 
-* The VDR shows up as “PlugIn Virtual” in the NMEA Debug Window.
+* The ITS Playback shows up as “PlugIn Virtual” in the NMEA Debug Window.
 
 == 5. FAQ
 
@@ -148,5 +123,5 @@ http://www.cruisersforum.com/forums/f134/playback-vdr-from-recorded-file-201359.
 
 === 5.2 What file format is used for recording?
 
-The VDR plugin uses a CSV-based format that supports NMEA0183, NMEA2000, and SignalK data.
+The ITS Playback plugin uses a CSV-based format that supports NMEA0183, NMEA2000, and SignalK data.
 See the xref:log_format.adoc[Log Format Specification] for details on the format and examples.

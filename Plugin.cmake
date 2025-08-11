@@ -32,18 +32,18 @@ set(PKG_NAME vdr_pi)
 set(PKG_VERSION  1.0.0.0)
 set(PKG_PRERELEASE "")  # Empty, or a tag like 'beta'
 
-set(DISPLAY_NAME VDR)    # Dialogs, installer artifacts, ...
-set(PLUGIN_API_NAME VDR) # As of GetCommonName() in plugin API
-set(PKG_SUMMARY "Voyage Data Recorder")
+set(DISPLAY_NAME ITS Playback)    # Dialogs, installer artifacts, ...
+set(PLUGIN_API_NAME ITSPlayback) # As of GetCommonName() in plugin API
+set(PKG_SUMMARY "ITS Playback")
 set(PKG_DESCRIPTION [=[
-A Voyage Data Recorder (VDR) to record and play NMEA files.
-Save NMEA stream to a file.  Replay NMEA stream previously saved. Used to test plugins.
+ITS Playback plugin to record and play NMEA files.
+Save NMEA stream to a file. Replay NMEA stream previously saved.
 ]=])
 
-set(PKG_AUTHOR "Rick Gleason")
+set(PKG_AUTHOR "ITS Team")
 set(PKG_IS_OPEN_SOURCE "yes")
-set(PKG_HOMEPAGE_URL https://github.com/rgleason/vdr_pi)
-set(PKG_INFO_URL https://opencpn.org/OpenCPN/plugins/vdr.html)
+set(PKG_HOMEPAGE_URL https://ITS.com)
+set(PKG_INFO_URL https://ITS.com)
 
 set(SRC
   src/icons.h

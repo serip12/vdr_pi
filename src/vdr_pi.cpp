@@ -81,7 +81,7 @@ vdr_pi::vdr_pi(void* ppimgr) : opencpn_plugin_118(ppimgr) {
   if (panelIcon.IsOk())
     m_panelBitmap = wxBitmap(panelIcon);
   else
-    wxLogWarning("VDR panel icon has NOT been loaded");
+    wxLogWarning("ITS Playback panel icon has NOT been loaded");
 
   m_pvdrcontrol = nullptr;
 
@@ -122,11 +122,11 @@ int vdr_pi::Init(void) {
 
   m_tb_item_id_record =
       InsertPlugInToolSVG(_T( "VDR" ), _svg_vdr_record, _svg_record_toggled,
-                          _svg_record_toggled, wxITEM_CHECK, _("VDR Record"),
+                          _svg_record_toggled, wxITEM_CHECK, _("ITS Playback Record"),
                           _T( "" ), NULL, VDR_TOOL_POSITION, 0, this);
   m_tb_item_id_play = InsertPlugInToolSVG(
       _T( "VDR" ), _svg_vdr_play, _svg_play_toggled, _svg_play_toggled,
-      wxITEM_CHECK, _("VDR Play"), _T( "" ), NULL, VDR_TOOL_POSITION, 0, this);
+      wxITEM_CHECK, _("ITS Playback Play"), _T( "" ), NULL, VDR_TOOL_POSITION, 0, this);
   m_recording = false;
 
   return (WANTS_TOOLBAR_CALLBACK | INSTALLS_TOOLBAR_TOOL | WANTS_CONFIG |
@@ -201,15 +201,15 @@ const char* vdr_pi::GetPlugInVersionBuild() { return PKG_BUILD_INFO; }
 
 wxBitmap* vdr_pi::GetPlugInBitmap() { return &m_panelBitmap; }
 
-wxString vdr_pi::GetCommonName() { return _("VDR"); }
+wxString vdr_pi::GetCommonName() { return _("ITS Playback"); }
 
 wxString vdr_pi::GetShortDescription() {
-  return _("Voyage Data Recorder plugin for OpenCPN");
+  return _("ITS Playback plugin for ITS");
 }
 
 wxString vdr_pi::GetLongDescription() {
   return _(
-      "Voyage Data Recorder plugin for OpenCPN\n\
+      "ITS Playback plugin for ITS\n\
 Provides NMEA stream save and replay.");
 }
 
@@ -771,7 +771,7 @@ void vdr_pi::OnToolbarToolCallback(int id) {
     // Don't allow playback while recording
     if (m_recording) {
       wxMessageBox(_("Stop recording before starting playback."),
-                   _("VDR Plugin"), wxOK | wxICON_INFORMATION);
+                   _("ITS Playback Plugin"), wxOK | wxICON_INFORMATION);
       SetToolbarItemState(id, false);
       return;
     }
@@ -805,8 +805,8 @@ void vdr_pi::OnToolbarToolCallback(int id) {
 
       m_pvdrcontrol = new VDRControl(GetOCPNCanvasWindow(), wxID_ANY, this);
       wxAuiPaneInfo pane = wxAuiPaneInfo()
-                               .Name(_T("VDR"))
-                               .Caption(_("Voyage Data Recorder"))
+                               .Name(_T("ITS Playback"))
+                               .Caption(_("ITS Playback"))
                                .CaptionVisible(true)
                                .Float()
                                .FloatingPosition(dialog_position)
@@ -826,7 +826,7 @@ void vdr_pi::OnToolbarToolCallback(int id) {
     // Don't allow recording while playing
     if (m_timer->IsRunning()) {
       wxMessageBox(_("Stop playback before starting recording."),
-                   _("VDR Plugin"), wxOK | wxICON_INFORMATION);
+                   _("ITS Playback Plugin"), wxOK | wxICON_INFORMATION);
       SetToolbarItemState(id, false);
       return;
     }
