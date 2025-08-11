@@ -1,6 +1,6 @@
 # vdr\_pi README
 
-A record and replay plugin for OpenCPN.
+A record and replay plugin for ITS.
 
 More user info: https://opencpn.org/OpenCPN/plugins/vdr.html
 
